@@ -13,8 +13,7 @@
 	
   },
         "description" : "Improves the deafult Blocking system on fxp.co.il",
-        "version" : "0.1",
-		"update_url": "http://0.0.0.0",
+        "version" : "0.0.1",
 	"icons": {"16": "icon.png","32": "icon.png","64": "icon.png","128": "icon.png"},
 	"content_scripts": [{
 		"js" : ["js/block.js"],
@@ -25,7 +24,7 @@
 			"matches": ["https://www.fxp.co.il/showthread.php?t=*"]
 		},
 		{
-			"js": ["js/updateList.js"],
+			"js": ["js/updateList.js","js/managerBlock.js"],
 			"matches": ["https://www.fxp.co.il/member.php?u=*"]
 		}
 	],
