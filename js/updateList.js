@@ -31,8 +31,26 @@ function getBlocked() {
         console.log(blocked[i].children[1].innerHTML);
         blockedArray.push(blocked[i].children[1].innerHTML);
     }
-    console.log(blockedArray);
-    storeArray();
+    console.log("going to modsImport");
+    modsImport();
+}
+
+function modsImport(){
+    chrome.storage.local.get('moderators', function(data) {
+            if (data.moderators) {
+                modsBlock(data.moderators)
+            }
+        
+     });
+}
+function modsBlock(array){
+    console.log("entered modsBlock");
+for (var i = 0; i < array.length; i++) {
+console.log(array[i]);
+blockedArray.push(array[i]);
+}
+console.log(blockedArray)
+storeArray()
 }
 
 function storeArray() {
@@ -41,6 +59,7 @@ function storeArray() {
         'myobjkey': blockedArray
     }, function() {
         console.log("stored blocked");
+        console.log(blockedArray)
     });
 
 }

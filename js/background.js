@@ -1,6 +1,8 @@
 
 var blocked = 0;
 var blockedArray = [];
+var blockedMods =[];
+
 var firstAJAX = true;
 var messages = false;
 chrome.runtime.onInstalled.addListener(function(details) {
@@ -59,6 +61,12 @@ function storeArray() {
         'stringOption': "11"
     }, function() {
         console.log("stored stringMsg");
+    });
+
+        chrome.storage.local.set({ 
+        'moderators': blockedMods
+    }, function() {
+        console.log("stored mods");
     });
 
 }

@@ -55,6 +55,7 @@ function importBlocked() {
 }
 
 function removeThreads(array) {
+	console.log(array);
     var fun = 0;
     var stickythreads=document.querySelectorAll(".ma.mp-sticky").length;
     window.setInterval(function() {
